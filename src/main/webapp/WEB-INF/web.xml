@@ -1,0 +1,106 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
+
+	<servlet>
+		<servlet-name>helloworld</servlet-name>
+		<servlet-class>testweb.servlet.HelloWorld</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>helloworld</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>download</servlet-name>
+		<servlet-class>testweb.servlet.DownloadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>download</servlet-name>
+		<url-pattern>/download</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>pull</servlet-name>
+		<servlet-class>testweb.servlet.PullClientServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>pull</servlet-name>
+		<url-pattern>/pull</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>form</servlet-name>
+		<servlet-class>testweb.servlet.FormServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>form</servlet-name>
+		<url-pattern>/form.html</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>opensession</servlet-name>
+		<servlet-class>testweb.servlet.OpenSessionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>opensession</servlet-name>
+		<url-pattern>/openSession.html</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>displaysession</servlet-name>
+		<servlet-class>testweb.servlet.DisplaySessionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>displaysession</servlet-name>
+		<url-pattern>/displaySession.html</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>bugServlet</servlet-name>
+		<servlet-class>testweb.servlet.BugServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>bugServlet</servlet-name>
+		<url-pattern>/bug.html</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>errorServlet</servlet-name>
+		<servlet-class>testweb.servlet.ErrorServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>errorServlet</servlet-name>
+		<url-pattern>/error.html</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>secretServlet</servlet-name>
+		<servlet-class>testweb.servlet.SecretServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>secretServlet</servlet-name>
+		<url-pattern>/admin/secret.html</url-pattern>
+	</servlet-mapping>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Zone administration</web-resource-name>
+			<url-pattern>/admin/*</url-pattern>
+			<http-method>GET</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>administrateur</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	</login-config>
+	
+	<servlet>
+		<servlet-name>controlleurServlet</servlet-name>
+		<servlet-class>testweb.servlet.ControlleurServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>controlleurServlet</servlet-name>
+		<url-pattern>/genereListe.html</url-pattern>
+	</servlet-mapping>
+
+</web-app>
